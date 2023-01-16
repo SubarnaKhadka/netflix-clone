@@ -4,10 +4,7 @@ const userRoutes = require("./routes/UserRoutes");
 const mongoose = require("mongoose");
 
 const app = express();
-const dotenv = require("dotenv");
-const PORT = process.env.PORT || 5000;
 
-dotenv.config();
 app.use(cors());
 app.use(express.json());
 
@@ -25,6 +22,6 @@ mongoose
 
 app.use("/api/user", userRoutes);
 
-app.listen(PORT, () => {
-  console.log(`server started on port ${PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`server started `);
 });
