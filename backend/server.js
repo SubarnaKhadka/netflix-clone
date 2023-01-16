@@ -3,6 +3,8 @@ const cors = require("cors");
 const userRoutes = require("./routes/UserRoutes");
 const mongoose = require("mongoose");
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 
 app.use(cors());
@@ -22,6 +24,6 @@ mongoose
 
 app.use("/api/user", userRoutes);
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
   console.log(`server started `);
 });
